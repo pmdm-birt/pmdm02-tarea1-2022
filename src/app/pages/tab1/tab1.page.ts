@@ -40,6 +40,14 @@ export class Tab1Page implements OnInit {
     } );
   }
 
+  seleccionado(item: Article): boolean {
+    let indice: number = this.gestionNoticiasLeer.buscar(item);
+    if (indice != -1) {
+      return true;
+    }
+    return false; 
+  }
+
   ngOnInit() { 
   }
 }

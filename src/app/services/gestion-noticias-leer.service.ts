@@ -12,6 +12,7 @@ export class GestionNoticiasLeerService {
 
   }
 
+  // Añade una nueva noticia a leer
   addNoticia(item : Article) {
     // copiar item
     let itemString = JSON.stringify(item);
@@ -22,6 +23,7 @@ export class GestionNoticiasLeerService {
     // console.log(this.noticiasLeer);
   }
 
+  // Comprueba si una noticia ya está en el array
   buscar(item: Article): number  {
     let articuloEncontrado: any = this.noticiasLeer.find(
       function(cadaArticulo) { 
@@ -32,6 +34,7 @@ export class GestionNoticiasLeerService {
     return indice;
   }
 
+  // Borra una noticia
   borrarNoticia(item: Article) {
     let indice = this.buscar(item);
     if (indice != -1) {
@@ -40,14 +43,7 @@ export class GestionNoticiasLeerService {
     }
   }
 
-  seleccionado(item: Article): boolean {
-    let indice: number = this.buscar(item);
-    if (indice != -1) {
-      return true;
-    }
-    return false; 
-  }
-
+  // Devuelve todas las noticias para leer
   getNoticias() {
     return this.noticiasLeer;
   }
