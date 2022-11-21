@@ -15,7 +15,7 @@ export class Tab1Page implements OnInit {
   listaNoticias: Article[] = [];
   respuesta: Observable<RespuestaNoticias> = {} as Observable<RespuestaNoticias>;
 
-  constructor(private leerFichero: HttpClient, private gestionNoticiasLeer: GestionNoticiasLeerService) {
+  constructor(private leerFichero: HttpClient, public gestionNoticiasLeer: GestionNoticiasLeerService) {
     this.cargarFichero(); 
   }
 

@@ -40,6 +40,14 @@ export class GestionNoticiasLeerService {
     }
   }
 
+  seleccionado(item: Article): boolean {
+    let indice: number = this.buscar(item);
+    if (indice != -1) {
+      return true;
+    }
+    return false; 
+  }
+
   getNoticias() {
     return this.noticiasLeer;
   }
