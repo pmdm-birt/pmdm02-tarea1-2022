@@ -19,6 +19,7 @@ export class Tab1Page implements OnInit {
     this.cargarFichero(); 
   }
 
+  // Cuando cambia el check, en función de su valor añade o borra la noticia
   check(eventoRecibido: any, item: Article) {
     let estado: boolean = eventoRecibido.detail.checked;
     if (estado) {
@@ -40,6 +41,7 @@ export class Tab1Page implements OnInit {
     } );
   }
 
+  // Comprueba si una noticia está para leer o no
   seleccionado(item: Article): boolean {
     let indice: number = this.gestionNoticiasLeer.buscar(item);
     if (indice != -1) {
